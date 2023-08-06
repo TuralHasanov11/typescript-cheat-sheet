@@ -22,22 +22,26 @@
 - [Abstract Classes](#abstract-classes)
 - [Generics](#generics)
 - [Partial](#partial)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
-- [Number](#number)
+- [Pick](#pick)
+- [Omit](#omit)
+- [Readonly](#readonly)
+- [Record](#number)
+- [Satisfies](#satisfies)
+- [Exclude](#exclude)
+- [Extract](#extract)
+- [Non Nullable](#non-nullable)
+- [Parameters](#parameters)
+- [ReturnType](#returntype)
+- [Instance Type](#instance-type)
+- [Awaited](#awaited)
+- [Mapped Types](#mapped-types)
+- [Namespace](#namespace)
+- [Multi File Namespaces](#multi-file-namespaces)
+- [Ambient Modules](#ambient-modules)
+- [Namespace Augmentation](#namespace-augmentation)
+- [Declare](#declare)
+- [Conditional Types](#conditional-types)
+
 
 ## String
 ```typescript
@@ -708,15 +712,6 @@ type UnionSquareDisc = EventConfig<Square | Circle>;
 //     square: (event: Square) => void;
 //     circle: (event: Circle) => void;
 // }
-```
-
-## Non Nullable
-> Non-Nullable constructs a type by excluding null and undefined from Type.
-```typescript
-type T4 = NonNullable<string | number | undefined>;
-// type T4 = string | number
-type T5 = NonNullable<string[] | null | undefined>;
-// type T5 = string[]
 ```
 
 ## Namespace
