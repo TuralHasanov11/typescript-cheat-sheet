@@ -889,3 +889,41 @@ type ToArray<Type> = Type extends any ? Type[] : never;
 type StrArrOrNumArr = ToArray<string | number>;
 // type StrArrOrNumArr = string[] | number[]
 ```
+
+## Advanced
+```typescript
+// Mapped Types
+type Events = {
+  add:string;
+  remove: string;
+  move: string;
+}
+
+type EventKeys = keyof Events;
+
+type OnEvent = {
+  [Key in EventKeys as `on${Capitalize<Key>}`]: () => any
+}
+
+// Template Literals
+type RgbCss = `rgb(${number},${number},${number})`;
+
+type GapType = 'margin' | 'padding';
+type Positions = 'left' | 'bottom' | 'top' | 'right';
+type GapCss = `${GapType}-${Positions}`
+type SizeType = 'rem' | 'em' | 'px'
+type SizeCss = `${number}${SizeType}`
+
+type MarginPadding = {
+  [Key in GapCss]?: SizeCss
+}
+
+// never
+type NoEmptyString<T extends string> = T extends '' ? never : T;
+
+function failOnEmtptyString<T extends string>(input: NoEmptyString<T>){
+}
+
+type Tuple<Length extends number, TupleType, Acc extends TupleType[] = []> = Acc['length'] extends Length ? Acc : Tuple<Length, TupleType, [...Acc, TupleType]>;
+
+```
